@@ -1,21 +1,28 @@
 import pandas as pd
-from matplotlib import pyplot as plt
+import plotly.express as px
 
-data = pd.read_csv(r'crime_rates.csv', encoding='utf-8').fillna(0)
-# plt.plot(df.index['Year'], df.index['Burglary Rate'])
+data = pd.read_csv(r'2014_apple_stock.csv')
+data.head()
 print(data.columns)
-murder_data = data['Murder Rate'].iloc[0:1000].values
-population_data = data['Population'].iloc[0:1000].values
 
-fig = plt.figure()
-ax = fig.add_subplot(111)
-ax.set_title("First ten murder rates")
 
-print(murder_data)
-ax.plot(murder_data, c='r')
+fig = px.line(data, x = 'AAPL_x', y = 'AAPL_y', title='Apple Share Prices over time (2014)')
+fig.show()
+
+
+
+# murder_data = data['Murder Rate'].iloc[0:1000].values
+# year_data = data['Year'].iloc[0:1000].values
+# population_data = data['Population'].iloc[0:1000].values
+# print(murder_data)
+# print(population_data)
+# fig = plt.figure()
+# ax = fig.add_subplot(111)
+# ax.set_title("First ten murder rates")
+# 
+# ax.plot(year_data,murder_data, c='r')
 
 # plt.plot(year_data, murder_rate_data)
-# # plt.plot(x, y)
-plt.show()
+# plt.show()
 
 
