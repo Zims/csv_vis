@@ -9,18 +9,18 @@ print(cr_data.columns)
 # plt.plot(sample_data.AAPL_x, sample_data.AAPL_y)
 # plt.show()
 
-us = data[data.country == 'United States']
-china = data[data.country == 'China']
+# us = data[data.country == 'United States']
+# china = data[data.country == 'China']
 
-florida = cr_data[cr_data.State == 'Florida']
-cali = cr_data[cr_data.State == 'California']
+alaska = cr_data[cr_data.State == 'Alaska']
+minn = cr_data[cr_data.State == 'Minnesota']
 
-plt.plot(florida.Year, florida.Population/10**6)
-plt.plot(cali.Year, cali.Population/10**6)
+plt.plot(alaska.Year, alaska.Murder_Rate)
+plt.plot(minn.Year, minn.Murder_Rate)
 
-plt.legend(['Florida', 'California'])
+plt.legend(['Alaska', 'Minnesota'])
 plt.xlabel('Year')
-plt.ylabel('Population (millions)')
+plt.ylabel('Murder rate')
 
 plt.show()
 
