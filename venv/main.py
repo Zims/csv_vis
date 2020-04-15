@@ -1,42 +1,24 @@
 import pandas as pd
 from matplotlib import pyplot as plt
+import operator
 
-
-sample_data = pd.read_csv(r'2014_apple_stock.csv')
-data = pd.read_csv(r'countries.csv')
 cr_data = pd.read_csv(r'crime_rates.csv')
 print(cr_data.columns)
-# plt.plot(sample_data.AAPL_x, sample_data.AAPL_y)
-# plt.show()
 
-us = data[data.country == 'United States']
-china = data[data.country == 'China']
 
-florida = cr_data[cr_data.State == 'Florida']
-cali = cr_data[cr_data.State == 'California']
-
-plt.plot(florida.Year, florida.Population/10**6)
-plt.plot(cali.Year, cali.Population/10**6)
-
-plt.legend(['Florida', 'California'])
-plt.xlabel('Year')
-plt.ylabel('Population (millions)')
-
-plt.show()
+def most_murderous(chosen_year):
+    chosen_year_data = cr_data[cr_data.Year == chosen_year]
 
 
 
-# plt.plot(us.year, us.population/ 10**6)
-# plt.plot(china.year, china.population/ 10**6)
-# plt.legend(['US', 'China'])
-# plt.xlabel('Year')
-# plt.ylabel('Population(millions)')
+    # REQUIRED
+    #           # Implement the function “most murderous”, which takes a year (an integer) as its argument.
+    #           # It does two things:
+    #           # 1.It draws a horizontal bar chart of the 5 states that had the highest murder rate in that year.
+    #           # 2.It returns an array of the names of these states in order of increasing murder rate.
 
-# Percentage growth
-# us.population / us.population.iloc[0] * 100  #we get first year as 100% and so on
-# plt.plot(us.year, us.population / us.population.iloc[0] * 100)
-# plt.plot(china.year, china.population / china.population.iloc[0] * 100)
-# plt.legend(['US', 'China'])
-# plt.xlabel('Year')
-# plt.ylabel('Population(growth in %)')
-# plt.show()
+
+most_murderous(1999)
+
+
+
