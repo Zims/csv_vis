@@ -2,12 +2,12 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import operator
 
-cr_data = pd.read_csv(r'crime_rates.csv')
-print(cr_data.columns)
+data = pd.read_csv('crime_rates.csv')
+print(data.columns)
 
 
-def most_murderous(chosen_year):
-    chosen_year_data = cr_data[cr_data.Year == chosen_year]
+# def most_murderous(chosen_year):
+#     chosen_year_data = cr_data[cr_data.Year == chosen_year]
 
 
 
