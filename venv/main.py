@@ -3,7 +3,25 @@ from matplotlib import pyplot as plt
 import operator
 
 data = pd.read_csv('crime_rates.csv')
-print(data.columns)
+
+data.State
+print(data['State'])
+
+
+alaska = data[data.State == 'Alaska']
+wyoming = data[data.State == 'Wyoming']
+florida = data[data.State == 'Florida']
+
+plt.plot(alaska.Year, alaska.Murder_Rate)
+plt.plot(wyoming.Year, wyoming.Murder_Rate)
+plt.plot(florida.Year, florida.Murder_Rate)
+
+
+plt.title('Murder rate')
+plt.legend(['Alaska', 'Wyoming', 'Florida'])
+plt.ylabel('Murder rate')
+plt.xlabel('Year')
+plt.show()
 
 
 # def most_murderous(chosen_year):
